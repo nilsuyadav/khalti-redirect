@@ -1,27 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Redirecting...</title>
-    <script>
-        function redirectToApp() {
+    <script type="text/javascript">
+        setTimeout(function() {
             window.location.href = "artha://khaltiPay";
-            
-            // Fallback: If the app is not installed, redirect to a safe webpage
-            setTimeout(function() {
-                window.location.href = "https://artha.com/app-download";  // Change this to your app's landing page
-            }, 3000); 
-        }
-        
-        // Try to redirect when the page loads
-        window.onload = function() {
-            redirectToApp();
-        };
+        }, 1000);  // Redirect after 1 second
     </script>
 </head>
 <body>
-    <p>Redirecting to your app...</p>
+    <p>Redirecting to the app...</p>
 </body>
 </html>
-
