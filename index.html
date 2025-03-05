@@ -3,21 +3,12 @@
 <head>
     <title>Redirecting...</title>
     <script type="text/javascript">
-        function redirectToApp() {
-            window.location.href = "artha://artha.com/borrowerDashboard";
-        }
-
-        // Try automatic redirection after 1 second
         setTimeout(function() {
-            redirectToApp();
-        }, 1000);
+            window.location.href = "artha://artha.com/borrowerDashboard";
+        }, 1000);  // Redirect after 1 second
     </script>
 </head>
 <body>
     <p>Redirecting to the app...</p>
-    <button onclick="redirectToApp()" style="padding: 10px; font-size: 16px;">
-        Click here if not redirected
-    </button>
 </body>
 </html>
-
