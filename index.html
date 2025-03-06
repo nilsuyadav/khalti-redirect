@@ -2,24 +2,26 @@
 <html>
 <head>
     <title>Redirecting...</title>
-    <script type="text/javascript">
-        function redirectToApp() {
-            window.location.href = "artha://artha.com/borrowerDashboard";
-
-            // ✅ Fallback: If the app is not installed, redirect to a safe webpage
-            setTimeout(function() {
-                window.location.href = "https://google.com";  // Change this to your app's landing page
-            }, 3000);
-        }
-
-        // ✅ Attempt automatic redirection (may be blocked in some browsers)
-        setTimeout(function() {
-            redirectToApp();
-        }, 3000);
-    </script>
 </head>
 <body>
     <p>Redirecting to the app...</p>
+    <iframe id="appRedirectFrame" width="0" height="0" style="display: none;"></iframe>
+
+    <script type="text/javascript">
+        function redirectToApp() {
+            // Try opening the app via iframe
+            document.getElementById("appRedirectFrame").src = "artha://artha.com/borrowerDashboard";
+
+            // ✅ Fallback: Redirect to Google if the app is not installed
+            setTimeout(function() {
+                window.location.href = "https://google.com";
+            }, 3000);
+        }
+
+        // ✅ Attempt automatic redirection (some browsers may block)
+        setTimeout(redirectToApp, 2000);
+    </script>
+
     <button onclick="redirectToApp()" style="padding: 10px; font-size: 16px;">
         Click here if not redirected
     </button>
